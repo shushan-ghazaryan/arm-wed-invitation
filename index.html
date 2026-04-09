@@ -1,314 +1,199 @@
 <!DOCTYPE html>
 <html lang="hy">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-  <title>Հարսանեկան հրավեր | Անի & Արմեն</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    body {
-      background: #faf6f0;
-      font-family: 'Times New Roman', 'Georgia', 'Noto Serif Armenian', serif;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      padding: 2rem 1rem;
-    }
+<title>Հարսանեկան Հրավեր</title>
 
-    /* main invitation card */
-    .invitation {
-      max-width: 780px;
-      width: 100%;
-      background: #fffef8;
-      border-radius: 48px;
-      box-shadow: 0 30px 50px -20px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(220, 190, 160, 0.2);
-      position: relative;
-      overflow: hidden;
-      transition: transform 0.4s ease;
-    }
+<style>
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: #7A1E0E;
+  color: #EDECE1;
+  text-align: center;
+}
 
-    /* delicate border decoration */
-    .invitation::before {
-      content: "";
-      position: absolute;
-      top: 20px;
-      left: 20px;
-      right: 20px;
-      bottom: 20px;
-      border: 1px solid rgba(180, 140, 110, 0.25);
-      border-radius: 38px;
-      pointer-events: none;
-      z-index: 1;
-    }
+/* HERO */
+.hero {
+  background: url('https://i.imgur.com/8Km9tLL.jpg') center/cover no-repeat;
+  padding: 120px 20px;
+  position: relative;
+}
 
-    /* watercolor floral top */
-    .floral-top {
-      background: linear-gradient(145deg, #fef5ea, #fffaf2);
-      text-align: center;
-      padding: 2rem 1rem 0.5rem;
-      border-bottom: 2px solid #f0e0d0;
-    }
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+}
 
-    .flower-icon {
-      font-size: 54px;
-      letter-spacing: 12px;
-      color: #c9aa8b;
-      opacity: 0.7;
-      margin-bottom: 0.5rem;
-    }
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
 
-    .main-content {
-      padding: 2rem 2rem 2.8rem;
-      text-align: center;
-    }
+.hero h1 {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
 
-    /* armenian style subhead */
-    .armenian-sub {
-      font-size: 0.85rem;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: #b28b6f;
-      margin-bottom: 1rem;
-      font-weight: 500;
-    }
+.hero p {
+  font-size: 22px;
+}
 
-    .couple-name {
-      font-size: 3.5rem;
-      font-weight: 500;
-      font-family: 'Playfair Display', 'Noto Serif Armenian', serif;
-      letter-spacing: -0.5px;
-      color: #4a3026;
-      line-height: 1.2;
-      margin-bottom: 0.75rem;
-    }
+/* NAMES */
+.names {
+  padding: 60px 20px;
+  background: #C69C6D;
+  color: #5C1E18;
+}
 
-    .invite-line {
-      font-size: 1.1rem;
-      color: #6f5542;
-      font-style: italic;
-      margin: 1rem auto;
-      max-width: 400px;
-    }
+.names h2 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
 
-    .date-badge {
-      display: inline-block;
-      background: #f7ede4;
-      padding: 0.4rem 1.6rem;
-      border-radius: 60px;
-      font-size: 0.9rem;
-      color: #8b5e46;
-      margin: 1rem 0 0.8rem;
-      border: 1px solid #e5cfbf;
-    }
+.date {
+  font-size: 20px;
+}
 
-    .date {
-      font-size: 2.2rem;
-      font-weight: 600;
-      font-family: 'Playfair Display', serif;
-      color: #9b6e52;
-      margin: 0.3rem 0;
-    }
+/* STORY */
+.story {
+  padding: 60px 20px;
+  max-width: 800px;
+  margin: auto;
+}
 
-    .time-venue {
-      font-size: 1rem;
-      margin-top: 0.75rem;
-      color: #5e4536;
-    }
+.story p {
+  font-size: 18px;
+  line-height: 1.6;
+}
 
-    .venue-name {
-      font-weight: 600;
-      margin-top: 0.4rem;
-      font-size: 1.05rem;
-      color: #4a3226;
-    }
+/* TIMELINE */
+.timeline {
+  padding: 60px 20px;
+}
 
-    .divider {
-      width: 70px;
-      height: 1.5px;
-      background: #e3cfbe;
-      margin: 2rem auto;
-    }
+.timeline-item {
+  margin-bottom: 30px;
+}
 
-    /* RSVP card */
-    .rsvp-card {
-      background: #fefaf5;
-      border-radius: 32px;
-      padding: 1.8rem 1.5rem;
-      margin-top: 1.2rem;
-      border: 1px solid #eedfcb;
-    }
+.timeline-item h3 {
+  margin: 5px 0;
+}
 
-    .rsvp-title {
-      font-size: 1.5rem;
-      font-weight: 500;
-      color: #5a3e30;
-      margin-bottom: 0.4rem;
-    }
+/* FORM */
+.rsvp {
+  background: #C69C6D;
+  padding: 60px 20px;
+  color: #5C1E18;
+}
 
-    .rsvp-deadline {
-      font-size: 0.9rem;
-      color: #9c7a62;
-      margin-bottom: 1.4rem;
-    }
+input, textarea {
+  width: 80%;
+  max-width: 400px;
+  padding: 10px;
+  margin: 10px 0;
+  border: none;
+  border-bottom: 2px solid #5C1E18;
+  background: transparent;
+}
 
-    .btn-rsvp {
-      display: inline-block;
-      background: #a57154;
-      color: white;
-      text-decoration: none;
-      padding: 0.8rem 2.2rem;
-      border-radius: 50px;
-      font-weight: 500;
-      transition: all 0.3s;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-      border: none;
-      cursor: pointer;
-      font-size: 1rem;
-      letter-spacing: 0.5px;
-    }
+button {
+  margin-top: 20px;
+  padding: 12px 30px;
+  border: none;
+  background: #5C1E18;
+  color: #EDECE1;
+  border-radius: 30px;
+  cursor: pointer;
+}
 
-    .btn-rsvp:hover {
-      background: #7f533b;
-      transform: translateY(-2px);
-      box-shadow: 0 10px 20px -8px rgba(165, 113, 84, 0.4);
-    }
+/* ANIMATION */
+.fade {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: 0.8s;
+}
 
-    .dress-code {
-      margin-top: 1rem;
-      font-size: 0.8rem;
-      color: #b48b6e;
-    }
-
-    .footer-note {
-      margin-top: 2rem;
-      font-size: 0.75rem;
-      color: #c7ab95;
-      border-top: 1px solid #f0e2d6;
-      padding-top: 1.2rem;
-    }
-
-    /* decorative leaves */
-    .leaf-left, .leaf-right {
-      position: absolute;
-      font-size: 100px;
-      opacity: 0.12;
-      pointer-events: none;
-      bottom: 10px;
-      z-index: 0;
-    }
-    .leaf-left {
-      left: -30px;
-      transform: rotate(-15deg);
-    }
-    .leaf-right {
-      right: -30px;
-      transform: rotate(110deg);
-      bottom: -10px;
-    }
-
-    @media (max-width: 600px) {
-      body {
-        padding: 1rem;
-      }
-      .main-content {
-        padding: 1.5rem;
-      }
-      .couple-name {
-        font-size: 2.4rem;
-      }
-      .date {
-        font-size: 1.7rem;
-      }
-      .leaf-left, .leaf-right {
-        display: none;
-      }
-      .invitation::before {
-        top: 12px;
-        left: 12px;
-        right: 12px;
-        bottom: 12px;
-      }
-    }
-
-    /* subtle fade animation */
-    @keyframes fadeUp {
-      0% {
-        opacity: 0;
-        transform: translateY(25px);
-      }
-      100% {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-    .invitation {
-      animation: fadeUp 0.9s ease-out;
-    }
-  </style>
+.fade.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+</style>
 </head>
+
 <body>
 
-<div class="invitation">
-  <!-- decorative leaf elements -->
-  <div class="leaf-left">🌿</div>
-  <div class="leaf-right">🌸</div>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>Հարսանեկան Հրավեր</h1>
+    <p>Սիրով հրավիրում ենք Ձեզ</p>
+  </div>
+</section>
 
-  <div class="floral-top">
-    <div class="flower-icon">✽ ✿ ✾ ✿ ✽</div>
+<!-- NAMES -->
+<section class="names fade">
+  <h2>Անի & Արման</h2>
+  <div class="date">24.05.2026</div>
+</section>
+
+<!-- STORY -->
+<section class="story fade">
+  <p>
+    Սիրելի՛ բարեկամներ և ընկերներ,
+    մեծ սիրով հրավիրում ենք Ձեզ մասնակցելու մեր կյանքի ամենակարևոր և հիշարժան օրվան։
+    Ձեր ներկայությունը մեզ համար մեծ պատիվ կլինի։
+  </p>
+</section>
+
+<!-- TIMELINE -->
+<section class="timeline fade">
+  <div class="timeline-item">
+    <h3>12:00</h3>
+    <p>Պսակադրություն</p>
   </div>
 
-  <div class="main-content">
-    <div class="armenian-sub">Սիրով և երջանկությամբ</div>
-    <h1 class="couple-name">Անի & Արմեն</h1>
-    <div class="invite-line">
-      հրավիրում են Ձեզ իրենց հարսանիքին
-    </div>
-
-    <div class="date-badge">
-      ✨ ԿԱՐԵՎՈՐ ԱՄՍԱԹԻՎ ✨
-    </div>
-    <div class="date">
-      Շաբաթ, Սեպտեմբերի 12, 2026
-    </div>
-    <div class="time-venue">
-      ժամը 17:00
-    </div>
-    <div class="venue-name">
-      🌿 «Լեռնային առանձնատուն» 🌿<br>
-      Սայաթ-Նովայի 22, Երևան
-    </div>
-
-    <div class="divider"></div>
-
-    <div class="rsvp-card">
-      <div class="rsvp-title">Խնդրում ենք հաստատել</div>
-      <div class="rsvp-deadline">մինչև 2026 թվականի օգոստոսի 1-ը</div>
-      <a href="#" class="btn-rsvp" id="rsvpButton">Պատասխանել →</a>
-      <div class="dress-code">
-        Պարտեզի հագուստ (Garden party attire)
-      </div>
-    </div>
-
-    <div class="footer-note">
-      Նվերների ցանկը կարող եք գտնել հաստատումից հետո:<br>
-      Անհամբեր սպասում ենք Ձեզ հետ այս օրը կիսվելու:
-    </div>
+  <div class="timeline-item">
+    <h3>14:00</h3>
+    <p>Ֆոտոշարք</p>
   </div>
-</div>
+
+  <div class="timeline-item">
+    <h3>17:00</h3>
+    <p>Հարսանյաց հանդիսություն</p>
+  </div>
+</section>
+
+<!-- RSVP -->
+<section class="rsvp fade">
+  <h2>Հաստատեք Ձեր մասնակցությունը</h2>
+
+  <input type="text" placeholder="Անուն Ազգանուն">
+  <br>
+  <input type="text" placeholder="Հյուրերի քանակ">
+  <br>
+  <textarea placeholder="Մեկնաբանություն"></textarea>
+  <br>
+
+  <button>Ուղարկել</button>
+</section>
 
 <script>
-  document.getElementById('rsvpButton')?.addEventListener('click', function(e) {
-    e.preventDefault();
-    alert("🙏 Շնորհակալություն! 🙏\nՇուտով կստանաք հաստատման հղումը։\nԿարող եք նաև գրել info@aniarmenwedding.am");
-    // Replace with actual RSVP link if needed:
-    // window.location.href = "https://your-rsvp-page.com";
+const elements = document.querySelectorAll(".fade");
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("show");
+    }
   });
+});
+
+elements.forEach(el => observer.observe(el));
 </script>
 
 </body>
