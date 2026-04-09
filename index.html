@@ -1,1 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+  <title>Wedding Invitation | Sarah & Michael</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
+    body {
+      font-family: 'Georgia', 'Times New Roman', 'Playfair Display', serif;
+      background: #fbf7f0;
+      color: #3e2c2c;
+      line-height: 1.5;
+      padding: 2rem 1rem;
+    }
+
+    /* main card */
+    .invitation-card {
+      max-width: 750px;
+      margin: 0 auto;
+      background: #fffef9;
+      border-radius: 32px;
+      box-shadow: 0 25px 45px -12px rgba(0, 0, 0, 0.2), 0 2px 8px rgba(0, 0, 0, 0.02);
+      overflow: hidden;
+      position: relative;
+      transition: transform 0.3s ease;
+    }
+
+    /* subtle decorative border */
+    .invitation-card::before {
+      content: "";
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      right: 20px;
+      bottom: 20px;
+      border: 1px solid rgba(200, 170, 140, 0.4);
+      border-radius: 24px;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* hero image area (optional floral/illustration) */
+    .hero-floral {
+      background: linear-gradient(145deg, #f6ede4, #f9f0e6);
+      padding: 2rem 1rem 1rem;
+      text-align: center;
+      border-bottom: 2px solid #f0e2d4;
+    }
+
+    .floral-icon {
+      font-size: 48px;
+      letter-spacing: 8px;
+      color: #b48c6c;
+      opacity: 0.7;
+    }
+
+    /* main content */
+    .invitation-content {
+      padding: 2rem 2rem 2.5rem;
+      text-align: center;
+    }
+
+    .subhead {
+      font-size: 0.9rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #b48c6c;
+      margin-bottom: 1.2rem;
+      font-weight: 500;
+    }
+
+    .names {
+      font-size: 3.3rem;
+      font-weight: 400;
+      font-family: 'Playfair Display', 'Georgia', serif;
+      letter-spacing: -0.5px;
+      color: #4a2e2a;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+
+    .invitation-text {
+      font-size: 1.1rem;
+      color: #5e4b3a;
+      max-width: 450px;
+      margin: 1.2rem auto;
+      font-style: italic;
+    }
+
+    .date-badge {
+      background: #f9efea;
+      display: inline-block;
+      padding: 0.5rem 2rem;
+      border-radius: 60px;
+      font-size: 1.1rem;
+      font-weight: 500;
+      margin: 1.5rem 0 1rem;
+      color: #6f4e3a;
+      border: 1px solid #e6d5c8;
+    }
+
+    .date {
+      font-size: 1.9rem;
+      font-weight: 600;
+      font-family: 'Playfair Display', serif;
+      color: #8b5a4a;
+      letter-spacing: 1px;
+    }
+
+    .time-venue {
+      margin-top: 1.2rem;
+      font-size: 1.05rem;
+    }
+
+    .venue {
+      font-weight: 600;
+      color: #3e2c2c;
+      margin-top: 0.5rem;
+      font-size: 1.1rem;
+    }
+
+    .divider {
+      width: 60px;
+      height: 2px;
+      background: #e2cfbe;
+      margin: 2rem auto;
+    }
+
+    /* RSVP section */
+    .rsvp-section {
+      background: #fefaf5;
+      border-radius: 28px;
+      padding: 1.8rem 1.5rem;
+      margin-top: 1.5rem;
+      border: 1px solid #f1e6dd;
+    }
+
+    .rsvp-title {
+      font-size: 1.5rem;
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+      color: #4f352c;
+    }
+
+    .rsvp-sub {
+      font-size: 0.9rem;
+      color: #7d6656;
+      margin-bottom: 1.5rem;
+    }
+
+    .rsvp-button {
+      display: inline-block;
+      background: #8b5a4a;
+      color: white;
+      text-decoration: none;
+      padding: 0.9rem 2.5rem;
+      border-radius: 50px;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    .rsvp-button:hover {
+      background: #6f4234;
+      transform: translateY(-2px);
+      box-shadow: 0 12px 20px -10px rgba(139, 90, 74, 0.4);
+    }
+
+    /* footer */
+    .footer-note {
+      margin-top: 2.5rem;
+      font-size: 0.75rem;
+      color: #b19786;
+      border-top: 1px solid #f0e4da;
+      padding-top: 1.5rem;
+      letter-spacing: 0.3px;
+    }
+
+    /* responsive */
+    @media (max-width: 550px) {
+      body {
+        padding: 1rem 0.8rem;
+      }
+      .invitation-content {
+        padding: 1.5rem;
+      }
+      .names {
+        font-size: 2.2rem;
+      }
+      .date {
+        font-size: 1.5rem;
+      }
+      .rsvp-section {
+        padding: 1.2rem;
+      }
+    }
+
+    /* delicate animation */
+    @keyframes fadeUp {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .invitation-card {
+      animation: fadeUp 0.9s ease-out;
+    }
+
+    /* custom leaf accent */
+    .leaf-left, .leaf-right {
+      position: absolute;
+      font-size: 90px;
+      opacity: 0.1;
+      pointer-events: none;
+      user-select: none;
+      bottom: 10px;
+    }
+    .leaf-left {
+      left: -20px;
+      transform: rotate(-15deg);
+    }
+    .leaf-right {
+      right: -20px;
+      transform: rotate(100deg);
+      bottom: 0;
+    }
+    @media (max-width: 650px) {
+      .leaf-left, .leaf-right {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="invitation-card">
+  <!-- delicate floral decoration -->
+  <div class="leaf-left">🌿</div>
+  <div class="leaf-right">🌸</div>
+
+  <div class="hero-floral">
+    <div class="floral-icon">✽ ✿ ✾</div>
+  </div>
+
+  <div class="invitation-content">
+    <div class="subhead">Together with joyful hearts</div>
+    <h1 class="names">Sarah & Michael</h1>
+    <div class="invitation-text">
+      invite you to celebrate their wedding
+    </div>
+
+    <div class="date-badge">
+      <span>✨ SAVE THE DATE ✨</span>
+    </div>
+    <div class="date">Saturday, September 12, 2026</div>
+    <div class="time-venue">
+      at four o'clock in the afternoon
+    </div>
+    <div class="venue">
+      🌿 The Enchanted Garden Estate 🌿<br>
+      123 Oak Avenue, Sonoma, California
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="rsvp-section">
+      <div class="rsvp-title">Kindly RSVP</div>
+      <div class="rsvp-sub">by August 1st, 2026</div>
+      <a href="#" class="rsvp-button" id="rsvpBtn">Respond Online →</a>
+      <div style="margin-top: 1rem; font-size: 0.8rem; color:#b48c6c;">
+        Dinner & dancing · Garden attire encouraged
+      </div>
+    </div>
+
+    <div class="footer-note">
+      For gift preferences, please see our registry link inside the RSVP.<br>
+      We can’t wait to celebrate with you!
+    </div>
+  </div>
+</div>
+
+<!-- simple RSVP demo alert (replace with actual form link) -->
+<script>
+  document.getElementById('rsvpBtn')?.addEventListener('click', function(e) {
+    e.preventDefault();
+    alert("✨ Thank you! ✨\nRSVP form will open soon.\nFor now, please reply to hello@sarahandmichael.com");
+    // you can replace this with a real link: window.location.href = "/rsvp-form";
+  });
+</script>
+
+</body>
+</html>
