@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hy">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-  <title>Wedding Invitation | Sarah & Michael</title>
+  <title>Հարսանեկան հրավեր | Անի & Արմեն</title>
   <style>
     * {
       margin: 0;
@@ -12,294 +12,302 @@
     }
 
     body {
-      font-family: 'Georgia', 'Times New Roman', 'Playfair Display', serif;
-      background: #fbf7f0;
-      color: #3e2c2c;
-      line-height: 1.5;
+      background: #faf6f0;
+      font-family: 'Times New Roman', 'Georgia', 'Noto Serif Armenian', serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
       padding: 2rem 1rem;
     }
 
-    /* main card */
-    .invitation-card {
-      max-width: 750px;
-      margin: 0 auto;
-      background: #fffef9;
-      border-radius: 32px;
-      box-shadow: 0 25px 45px -12px rgba(0, 0, 0, 0.2), 0 2px 8px rgba(0, 0, 0, 0.02);
-      overflow: hidden;
+    /* main invitation card */
+    .invitation {
+      max-width: 780px;
+      width: 100%;
+      background: #fffef8;
+      border-radius: 48px;
+      box-shadow: 0 30px 50px -20px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(220, 190, 160, 0.2);
       position: relative;
-      transition: transform 0.3s ease;
+      overflow: hidden;
+      transition: transform 0.4s ease;
     }
 
-    /* subtle decorative border */
-    .invitation-card::before {
+    /* delicate border decoration */
+    .invitation::before {
       content: "";
       position: absolute;
       top: 20px;
       left: 20px;
       right: 20px;
       bottom: 20px;
-      border: 1px solid rgba(200, 170, 140, 0.4);
-      border-radius: 24px;
+      border: 1px solid rgba(180, 140, 110, 0.25);
+      border-radius: 38px;
       pointer-events: none;
       z-index: 1;
     }
 
-    /* hero image area (optional floral/illustration) */
-    .hero-floral {
-      background: linear-gradient(145deg, #f6ede4, #f9f0e6);
-      padding: 2rem 1rem 1rem;
+    /* watercolor floral top */
+    .floral-top {
+      background: linear-gradient(145deg, #fef5ea, #fffaf2);
       text-align: center;
-      border-bottom: 2px solid #f0e2d4;
+      padding: 2rem 1rem 0.5rem;
+      border-bottom: 2px solid #f0e0d0;
     }
 
-    .floral-icon {
-      font-size: 48px;
-      letter-spacing: 8px;
-      color: #b48c6c;
+    .flower-icon {
+      font-size: 54px;
+      letter-spacing: 12px;
+      color: #c9aa8b;
       opacity: 0.7;
+      margin-bottom: 0.5rem;
     }
 
-    /* main content */
-    .invitation-content {
-      padding: 2rem 2rem 2.5rem;
+    .main-content {
+      padding: 2rem 2rem 2.8rem;
       text-align: center;
     }
 
-    .subhead {
-      font-size: 0.9rem;
+    /* armenian style subhead */
+    .armenian-sub {
+      font-size: 0.85rem;
       letter-spacing: 3px;
       text-transform: uppercase;
-      color: #b48c6c;
-      margin-bottom: 1.2rem;
+      color: #b28b6f;
+      margin-bottom: 1rem;
       font-weight: 500;
     }
 
-    .names {
-      font-size: 3.3rem;
-      font-weight: 400;
-      font-family: 'Playfair Display', 'Georgia', serif;
+    .couple-name {
+      font-size: 3.5rem;
+      font-weight: 500;
+      font-family: 'Playfair Display', 'Noto Serif Armenian', serif;
       letter-spacing: -0.5px;
-      color: #4a2e2a;
-      margin-bottom: 1rem;
+      color: #4a3026;
       line-height: 1.2;
+      margin-bottom: 0.75rem;
     }
 
-    .invitation-text {
+    .invite-line {
       font-size: 1.1rem;
-      color: #5e4b3a;
-      max-width: 450px;
-      margin: 1.2rem auto;
+      color: #6f5542;
       font-style: italic;
+      margin: 1rem auto;
+      max-width: 400px;
     }
 
     .date-badge {
-      background: #f9efea;
       display: inline-block;
-      padding: 0.5rem 2rem;
+      background: #f7ede4;
+      padding: 0.4rem 1.6rem;
       border-radius: 60px;
-      font-size: 1.1rem;
-      font-weight: 500;
-      margin: 1.5rem 0 1rem;
-      color: #6f4e3a;
-      border: 1px solid #e6d5c8;
+      font-size: 0.9rem;
+      color: #8b5e46;
+      margin: 1rem 0 0.8rem;
+      border: 1px solid #e5cfbf;
     }
 
     .date {
-      font-size: 1.9rem;
+      font-size: 2.2rem;
       font-weight: 600;
       font-family: 'Playfair Display', serif;
-      color: #8b5a4a;
-      letter-spacing: 1px;
+      color: #9b6e52;
+      margin: 0.3rem 0;
     }
 
     .time-venue {
-      margin-top: 1.2rem;
-      font-size: 1.05rem;
+      font-size: 1rem;
+      margin-top: 0.75rem;
+      color: #5e4536;
     }
 
-    .venue {
+    .venue-name {
       font-weight: 600;
-      color: #3e2c2c;
-      margin-top: 0.5rem;
-      font-size: 1.1rem;
+      margin-top: 0.4rem;
+      font-size: 1.05rem;
+      color: #4a3226;
     }
 
     .divider {
-      width: 60px;
-      height: 2px;
-      background: #e2cfbe;
+      width: 70px;
+      height: 1.5px;
+      background: #e3cfbe;
       margin: 2rem auto;
     }
 
-    /* RSVP section */
-    .rsvp-section {
+    /* RSVP card */
+    .rsvp-card {
       background: #fefaf5;
-      border-radius: 28px;
+      border-radius: 32px;
       padding: 1.8rem 1.5rem;
-      margin-top: 1.5rem;
-      border: 1px solid #f1e6dd;
+      margin-top: 1.2rem;
+      border: 1px solid #eedfcb;
     }
 
     .rsvp-title {
       font-size: 1.5rem;
       font-weight: 500;
-      margin-bottom: 0.5rem;
-      color: #4f352c;
+      color: #5a3e30;
+      margin-bottom: 0.4rem;
     }
 
-    .rsvp-sub {
+    .rsvp-deadline {
       font-size: 0.9rem;
-      color: #7d6656;
-      margin-bottom: 1.5rem;
+      color: #9c7a62;
+      margin-bottom: 1.4rem;
     }
 
-    .rsvp-button {
+    .btn-rsvp {
       display: inline-block;
-      background: #8b5a4a;
+      background: #a57154;
       color: white;
       text-decoration: none;
-      padding: 0.9rem 2.5rem;
+      padding: 0.8rem 2.2rem;
       border-radius: 50px;
       font-weight: 500;
-      letter-spacing: 0.5px;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
       border: none;
       cursor: pointer;
       font-size: 1rem;
+      letter-spacing: 0.5px;
     }
 
-    .rsvp-button:hover {
-      background: #6f4234;
+    .btn-rsvp:hover {
+      background: #7f533b;
       transform: translateY(-2px);
-      box-shadow: 0 12px 20px -10px rgba(139, 90, 74, 0.4);
+      box-shadow: 0 10px 20px -8px rgba(165, 113, 84, 0.4);
     }
 
-    /* footer */
+    .dress-code {
+      margin-top: 1rem;
+      font-size: 0.8rem;
+      color: #b48b6e;
+    }
+
     .footer-note {
-      margin-top: 2.5rem;
+      margin-top: 2rem;
       font-size: 0.75rem;
-      color: #b19786;
-      border-top: 1px solid #f0e4da;
-      padding-top: 1.5rem;
-      letter-spacing: 0.3px;
+      color: #c7ab95;
+      border-top: 1px solid #f0e2d6;
+      padding-top: 1.2rem;
     }
 
-    /* responsive */
-    @media (max-width: 550px) {
+    /* decorative leaves */
+    .leaf-left, .leaf-right {
+      position: absolute;
+      font-size: 100px;
+      opacity: 0.12;
+      pointer-events: none;
+      bottom: 10px;
+      z-index: 0;
+    }
+    .leaf-left {
+      left: -30px;
+      transform: rotate(-15deg);
+    }
+    .leaf-right {
+      right: -30px;
+      transform: rotate(110deg);
+      bottom: -10px;
+    }
+
+    @media (max-width: 600px) {
       body {
-        padding: 1rem 0.8rem;
+        padding: 1rem;
       }
-      .invitation-content {
+      .main-content {
         padding: 1.5rem;
       }
-      .names {
-        font-size: 2.2rem;
+      .couple-name {
+        font-size: 2.4rem;
       }
       .date {
-        font-size: 1.5rem;
+        font-size: 1.7rem;
       }
-      .rsvp-section {
-        padding: 1.2rem;
+      .leaf-left, .leaf-right {
+        display: none;
+      }
+      .invitation::before {
+        top: 12px;
+        left: 12px;
+        right: 12px;
+        bottom: 12px;
       }
     }
 
-    /* delicate animation */
+    /* subtle fade animation */
     @keyframes fadeUp {
       0% {
         opacity: 0;
-        transform: translateY(20px);
+        transform: translateY(25px);
       }
       100% {
         opacity: 1;
         transform: translateY(0);
       }
     }
-
-    .invitation-card {
+    .invitation {
       animation: fadeUp 0.9s ease-out;
-    }
-
-    /* custom leaf accent */
-    .leaf-left, .leaf-right {
-      position: absolute;
-      font-size: 90px;
-      opacity: 0.1;
-      pointer-events: none;
-      user-select: none;
-      bottom: 10px;
-    }
-    .leaf-left {
-      left: -20px;
-      transform: rotate(-15deg);
-    }
-    .leaf-right {
-      right: -20px;
-      transform: rotate(100deg);
-      bottom: 0;
-    }
-    @media (max-width: 650px) {
-      .leaf-left, .leaf-right {
-        display: none;
-      }
     }
   </style>
 </head>
 <body>
 
-<div class="invitation-card">
-  <!-- delicate floral decoration -->
+<div class="invitation">
+  <!-- decorative leaf elements -->
   <div class="leaf-left">🌿</div>
   <div class="leaf-right">🌸</div>
 
-  <div class="hero-floral">
-    <div class="floral-icon">✽ ✿ ✾</div>
+  <div class="floral-top">
+    <div class="flower-icon">✽ ✿ ✾ ✿ ✽</div>
   </div>
 
-  <div class="invitation-content">
-    <div class="subhead">Together with joyful hearts</div>
-    <h1 class="names">Sarah & Michael</h1>
-    <div class="invitation-text">
-      invite you to celebrate their wedding
+  <div class="main-content">
+    <div class="armenian-sub">Սիրով և երջանկությամբ</div>
+    <h1 class="couple-name">Անի & Արմեն</h1>
+    <div class="invite-line">
+      հրավիրում են Ձեզ իրենց հարսանիքին
     </div>
 
     <div class="date-badge">
-      <span>✨ SAVE THE DATE ✨</span>
+      ✨ ԿԱՐԵՎՈՐ ԱՄՍԱԹԻՎ ✨
     </div>
-    <div class="date">Saturday, September 12, 2026</div>
+    <div class="date">
+      Շաբաթ, Սեպտեմբերի 12, 2026
+    </div>
     <div class="time-venue">
-      at four o'clock in the afternoon
+      ժամը 17:00
     </div>
-    <div class="venue">
-      🌿 The Enchanted Garden Estate 🌿<br>
-      123 Oak Avenue, Sonoma, California
+    <div class="venue-name">
+      🌿 «Լեռնային առանձնատուն» 🌿<br>
+      Սայաթ-Նովայի 22, Երևան
     </div>
 
     <div class="divider"></div>
 
-    <div class="rsvp-section">
-      <div class="rsvp-title">Kindly RSVP</div>
-      <div class="rsvp-sub">by August 1st, 2026</div>
-      <a href="#" class="rsvp-button" id="rsvpBtn">Respond Online →</a>
-      <div style="margin-top: 1rem; font-size: 0.8rem; color:#b48c6c;">
-        Dinner & dancing · Garden attire encouraged
+    <div class="rsvp-card">
+      <div class="rsvp-title">Խնդրում ենք հաստատել</div>
+      <div class="rsvp-deadline">մինչև 2026 թվականի օգոստոսի 1-ը</div>
+      <a href="#" class="btn-rsvp" id="rsvpButton">Պատասխանել →</a>
+      <div class="dress-code">
+        Պարտեզի հագուստ (Garden party attire)
       </div>
     </div>
 
     <div class="footer-note">
-      For gift preferences, please see our registry link inside the RSVP.<br>
-      We can’t wait to celebrate with you!
+      Նվերների ցանկը կարող եք գտնել հաստատումից հետո:<br>
+      Անհամբեր սպասում ենք Ձեզ հետ այս օրը կիսվելու:
     </div>
   </div>
 </div>
 
-<!-- simple RSVP demo alert (replace with actual form link) -->
 <script>
-  document.getElementById('rsvpBtn')?.addEventListener('click', function(e) {
+  document.getElementById('rsvpButton')?.addEventListener('click', function(e) {
     e.preventDefault();
-    alert("✨ Thank you! ✨\nRSVP form will open soon.\nFor now, please reply to hello@sarahandmichael.com");
-    // you can replace this with a real link: window.location.href = "/rsvp-form";
+    alert("🙏 Շնորհակալություն! 🙏\nՇուտով կստանաք հաստատման հղումը։\nԿարող եք նաև գրել info@aniarmenwedding.am");
+    // Replace with actual RSVP link if needed:
+    // window.location.href = "https://your-rsvp-page.com";
   });
 </script>
 
