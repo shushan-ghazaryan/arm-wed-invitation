@@ -1,39 +1,39 @@
+<!DOCTYPE html>
+<html lang="hy">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Հարսանեկան Հրավեր</title>
+
 <style>
 body {
   margin: 0;
-  background: #6d1a0f;
   font-family: sans-serif;
+  background: #6d1a0f;
+  color: #EDECE1;
   overflow-x: hidden;
 }
 
 /* HERO */
 .hero {
   height: 100vh;
-  background: url('https://i.imgur.com/8Km9tLL.jpg') center/cover no-repeat;
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+              url('https://i.imgur.com/8Km9tLL.jpg') center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
 }
 
-/* DARK OVERLAY */
-.hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.5);
-}
-
-/* CURVED TEXT */
 .curved-text {
   position: absolute;
   top: 60px;
   width: 100%;
-  text-align: center;
 }
 
 .curved-text svg {
-  width: 90%;
+  width: 100%;
   height: 200px;
 }
 
@@ -43,59 +43,204 @@ body {
   letter-spacing: 2px;
 }
 
-/* CENTER CONTENT */
-.center-content {
-  position: relative;
-  z-index: 2;
+.center {
   text-align: center;
-  color: #EDECE1;
 }
 
 .names {
   font-size: 42px;
-  margin-top: 20px;
 }
 
 .rings {
   font-size: 50px;
-  margin: 20px 0;
+  margin-bottom: 10px;
 }
 
-/* SCROLL DOWN */
-.scroll {
+/* SECTION */
+.section {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+/* GOLD BLOCK */
+.gold {
+  background: #C69C6D;
+  color: #5C1E18;
+}
+
+/* STORY */
+.story {
+  max-width: 700px;
+  margin: auto;
+  line-height: 1.7;
+}
+
+/* TIMELINE */
+.timeline {
+  position: relative;
+  padding: 80px 20px;
+}
+
+.timeline::before {
+  content: "";
   position: absolute;
-  bottom: 20px;
-  color: #EDECE1;
-  font-size: 14px;
-  animation: bounce 2s infinite;
+  left: 50%;
+  top: 0;
+  width: 4px;
+  height: 100%;
+  background: #EDECE1;
+  transform: translateX(-50%);
 }
 
-@keyframes bounce {
-  0%,100% { transform: translateY(0); }
-  50% { transform: translateY(10px); }
+.timeline-item {
+  width: 50%;
+  padding: 20px;
+  position: relative;
+}
+
+.timeline-item.left {
+  left: 0;
+  text-align: right;
+}
+
+.timeline-item.right {
+  left: 50%;
+  text-align: left;
+}
+
+.timeline-item::before {
+  content: "•";
+  position: absolute;
+  top: 25px;
+  font-size: 20px;
+  color: #EDECE1;
+}
+
+.timeline-item.left::before {
+  right: -10px;
+}
+
+.timeline-item.right::before {
+  left: -10px;
+}
+
+/* RSVP */
+input, textarea {
+  width: 80%;
+  max-width: 400px;
+  padding: 10px;
+  margin: 10px 0;
+  border: none;
+  border-bottom: 2px solid #5C1E18;
+  background: transparent;
+}
+
+button {
+  padding: 12px 30px;
+  border: none;
+  background: #5C1E18;
+  color: white;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+/* ANIMATION */
+.fade {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 0.8s;
+}
+
+.fade.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 </style>
+</head>
 
-<div class="hero">
+<body>
 
-  <!-- CURVED TEXT -->
-  <div class="curved-text">
-    <svg viewBox="0 0 500 200">
-      <path id="curve" d="M50,150 Q250,0 450,150" fill="transparent"/>
-      <text>
-        <textPath href="#curve" startOffset="50%" text-anchor="middle">
-          Երջանիկ օր ենք նշում միասին
-        </textPath>
-      </text>
-    </svg>
-  </div>
+<!-- HERO -->
+<section class="hero">
 
-  <!-- CENTER -->
-  <div class="center-content">
-    <div class="rings">💍</div>
-    <div class="names">Անի & Արման</div>
-  </div>
-
-  <div class="scroll">↓ Scroll ↓</div>
-
+<div class="curved-text">
+<svg viewBox="0 0 500 200">
+<path id="curve" d="M50,150 Q250,0 450,150" fill="transparent"/>
+<text>
+<textPath href="#curve" startOffset="50%" text-anchor="middle">
+Երջանիկ օր ենք նշում միասին
+</textPath>
+</text>
+</svg>
 </div>
+
+<div class="center">
+<div class="rings">💍</div>
+<div class="names">Անի & Արման</div>
+</div>
+
+</section>
+
+<!-- DATE -->
+<section class="section gold fade">
+<h2>24.05.2026</h2>
+</section>
+
+<!-- STORY -->
+<section class="section fade">
+<div class="story">
+Սիրելի՛ բարեկամներ և ընկերներ,
+մեծ սիրով հրավիրում ենք Ձեզ մասնակցելու մեր կյանքի ամենակարևոր օրվան։
+Ձեր ներկայությունը մեզ համար մեծ պատիվ կլինի։
+</div>
+</section>
+
+<!-- TIMELINE -->
+<section class="timeline">
+
+<div class="timeline-item left fade">
+<h3>12:00</h3>
+<p>Պսակադրություն</p>
+</div>
+
+<div class="timeline-item right fade">
+<h3>14:00</h3>
+<p>Ֆոտոշարք</p>
+</div>
+
+<div class="timeline-item left fade">
+<h3>17:00</h3>
+<p>Հարսանյաց հանդիսություն</p>
+</div>
+
+</section>
+
+<!-- RSVP -->
+<section class="section gold fade">
+
+<h2>Հաստատեք մասնակցությունը</h2>
+
+<input type="text" placeholder="Անուն Ազգանուն"><br>
+<input type="text" placeholder="Հյուրերի քանակ"><br>
+<textarea placeholder="Մեկնաբանություն"></textarea><br>
+
+<button>Ուղարկել</button>
+
+</section>
+
+<script>
+const faders = document.querySelectorAll('.fade');
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('show');
+    }
+  });
+});
+
+faders.forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
