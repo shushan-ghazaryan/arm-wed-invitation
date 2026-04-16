@@ -1,246 +1,583 @@
 <!DOCTYPE html>
-<html lang="hy">
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="Shushan Ghazaryan — Trend-setting Shopify Developer & E‑commerce artist. High-impact landing pages, fluid stores, and futuristic design.">
+  <title>Shushan Ghazaryan | Shopify Dev — NEON EDGE</title>
+  <!-- Google Fonts + Font Awesome 6 -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Clash+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-<title>Հարսանեկան Հրավեր</title>
+    body {
+      background: radial-gradient(circle at 30% 10%, #0a0a1a, #03030f);
+      font-family: 'Inter', sans-serif;
+      color: #eef5ff;
+      line-height: 1.5;
+      padding: 2rem 1.5rem;
+      position: relative;
+      overflow-x: hidden;
+    }
 
-<style>
-body {
-  margin: 0;
-  font-family: sans-serif;
-  background: #6d1a0f;
-  color: #EDECE1;
-  overflow-x: hidden;
-}
+    /* animated noise + gradient overlay */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: repeating-radial-gradient(circle at 30% 40%, rgba(255, 0, 200, 0.02) 0px, rgba(0, 200, 255, 0.02) 2px);
+      pointer-events: none;
+      z-index: 0;
+    }
 
-/* HERO */
-.hero {
-  height: 100vh;
-  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
-              url('https://i.imgur.com/8Km9tLL.jpg') center/cover no-repeat;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-}
+    .portfolio-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      background: rgba(10, 10, 25, 0.6);
+      backdrop-filter: blur(16px);
+      border-radius: 2rem;
+      box-shadow: 0 25px 45px -15px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(0, 255, 255, 0.1);
+      overflow: hidden;
+      transition: all 0.3s ease;
+      position: relative;
+      z-index: 2;
+      border: 1px solid rgba(0, 255, 255, 0.2);
+    }
 
-.curved-text {
-  position: absolute;
-  top: 60px;
-  width: 100%;
-}
+    /* animated neon border gradient */
+    .portfolio-container::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 2rem;
+      padding: 1.5px;
+      background: linear-gradient(125deg, #ff4d6d, #3a0ca3, #4cc9f0, #f72585);
+      mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      pointer-events: none;
+      opacity: 0.7;
+      transition: opacity 0.4s;
+    }
 
-.curved-text svg {
-  width: 100%;
-  height: 200px;
-}
+    .portfolio-container:hover::after {
+      opacity: 1;
+    }
 
-.curved-text text {
-  fill: #EDECE1;
-  font-size: 28px;
-  letter-spacing: 2px;
-}
+    .grid-layout {
+      display: grid;
+      grid-template-columns: 34% 66%;
+      transition: all 0.4s;
+    }
 
-.center {
-  text-align: center;
-}
+    /* LEFT PANEL — ultra trendy glass */
+    .left-panel {
+      background: rgba(20, 15, 35, 0.55);
+      backdrop-filter: blur(12px);
+      padding: 2rem 1.8rem;
+      border-right: 1px solid rgba(0, 255, 255, 0.2);
+    }
 
-.names {
-  font-size: 42px;
-}
+    .profile-avatar {
+      text-align: center;
+      margin-bottom: 1.8rem;
+      animation: floatGlow 5s ease-in-out infinite;
+    }
+    @keyframes floatGlow {
+      0% { transform: translateY(0px); filter: drop-shadow(0 0 2px #f72585); }
+      50% { transform: translateY(-8px); filter: drop-shadow(0 0 12px #4cc9f0); }
+      100% { transform: translateY(0px); filter: drop-shadow(0 0 2px #f72585); }
+    }
+    .avatar-circle {
+      background: linear-gradient(135deg, #f72585, #7209b7, #3a0ca3);
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto;
+      box-shadow: 0 15px 35px -5px #f7258566, 0 0 0 3px rgba(76, 201, 240, 0.6);
+      transition: all 0.3s;
+    }
+    .avatar-circle:hover {
+      transform: scale(1.03);
+      box-shadow: 0 20px 40px -8px #4cc9f0;
+    }
+    .avatar-circle span {
+      font-size: 3.2rem;
+      font-weight: 800;
+      font-family: 'Clash Display', sans-serif;
+      background: linear-gradient(145deg, #fff, #ffe6f0);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+    .name-title h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      font-family: 'Clash Display', sans-serif;
+      background: linear-gradient(135deg, #ffffff, #ffb3d1, #90e0ef);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      text-align: center;
+      letter-spacing: -0.3px;
+    }
+    .badge-role {
+      background: rgba(247, 37, 133, 0.2);
+      backdrop-filter: blur(8px);
+      border: 1px solid #f72585;
+      display: inline-block;
+      width: fit-content;
+      margin: 0.5rem auto 0;
+      padding: 0.35rem 1.2rem;
+      border-radius: 60px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #ffc8dd;
+    }
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+      margin-bottom: 1rem;
+      font-size: 0.9rem;
+      transition: 0.2s;
+    }
+    .contact-item i {
+      width: 1.6rem;
+      font-size: 1.2rem;
+      color: #4cc9f0;
+      text-shadow: 0 0 5px #4cc9f0;
+    }
+    .contact-item a, .contact-item span {
+      color: #e2e8ff;
+      text-decoration: none;
+    }
+    .contact-item:hover {
+      transform: translateX(8px);
+      color: #ffb3c6;
+    }
+    .divider-light {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #f72585, #4cc9f0, transparent);
+      margin: 1.6rem 0;
+    }
+    .section-left h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: #b5eaff;
+    }
+    .tech-stack, .lang-list, .interest-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+    }
+    .tech-badge, .lang-badge, .interest-item {
+      background: rgba(30, 20, 50, 0.7);
+      backdrop-filter: blur(4px);
+      padding: 0.4rem 1rem;
+      border-radius: 60px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      border: 1px solid rgba(76, 201, 240, 0.4);
+      transition: all 0.25s ease;
+      color: #d9f0ff;
+    }
+    .tech-badge:hover, .lang-badge:hover, .interest-item:hover {
+      background: #f72585;
+      border-color: #fff;
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px -6px #f72585;
+      color: white;
+    }
+    .upwork-btn {
+      display: block;
+      background: linear-gradient(105deg, #f72585, #7209b7);
+      color: white;
+      text-align: center;
+      padding: 0.85rem;
+      border-radius: 60px;
+      font-weight: 700;
+      margin-top: 1.5rem;
+      transition: all 0.3s;
+      text-decoration: none;
+      box-shadow: 0 8px 20px -5px #f7258566;
+      border: none;
+      letter-spacing: 0.5px;
+    }
+    .upwork-btn:hover {
+      background: linear-gradient(105deg, #ff4d8c, #9d4edd);
+      transform: scale(1.02);
+      box-shadow: 0 12px 28px -5px #ff4d8c;
+    }
 
-.rings {
-  font-size: 50px;
-  margin-bottom: 10px;
-}
+    /* RIGHT PANEL */
+    .right-panel {
+      padding: 2rem 2.2rem;
+      background: transparent;
+    }
+    .right-section {
+      margin-bottom: 2.5rem;
+      opacity: 0;
+      transform: translateY(25px);
+      animation: riseUp 0.6s cubic-bezier(0.2, 0.9, 0.4, 1.1) forwards;
+    }
+    @keyframes riseUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .right-section:nth-child(1) { animation-delay: 0.05s; }
+    .right-section:nth-child(2) { animation-delay: 0.15s; }
+    .right-section:nth-child(3) { animation-delay: 0.25s; }
+    .right-section:nth-child(4) { animation-delay: 0.35s; }
+    .right-section:nth-child(5) { animation-delay: 0.45s; }
 
-/* SECTION */
-.section {
-  padding: 80px 20px;
-  text-align: center;
-}
-
-/* GOLD BLOCK */
-.gold {
-  background: #C69C6D;
-  color: #5C1E18;
-}
-
-/* STORY */
-.story {
-  max-width: 700px;
-  margin: auto;
-  line-height: 1.7;
-}
-
-/* TIMELINE */
-.timeline {
-  position: relative;
-  padding: 80px 20px;
-}
-
-.timeline::before {
-  content: "";
-  position: absolute;
-  left: 50%;
-  top: 0;
-  width: 4px;
-  height: 100%;
-  background: #EDECE1;
-  transform: translateX(-50%);
-}
-
-.timeline-item {
-  width: 50%;
-  padding: 20px;
-  position: relative;
-}
-
-.timeline-item.left {
-  left: 0;
-  text-align: right;
-}
-
-.timeline-item.right {
-  left: 50%;
-  text-align: left;
-}
-
-.timeline-item::before {
-  content: "•";
-  position: absolute;
-  top: 25px;
-  font-size: 20px;
-  color: #EDECE1;
-}
-
-.timeline-item.left::before {
-  right: -10px;
-}
-
-.timeline-item.right::before {
-  left: -10px;
-}
-
-/* RSVP */
-input, textarea {
-  width: 80%;
-  max-width: 400px;
-  padding: 10px;
-  margin: 10px 0;
-  border: none;
-  border-bottom: 2px solid #5C1E18;
-  background: transparent;
-}
-
-button {
-  padding: 12px 30px;
-  border: none;
-  background: #5C1E18;
-  color: white;
-  border-radius: 30px;
-  cursor: pointer;
-}
-
-/* ANIMATION */
-.fade {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: 0.8s;
-}
-
-.fade.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-</style>
+    .right-section h2 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      font-family: 'Clash Display', sans-serif;
+      background: linear-gradient(125deg, #ffb3d1, #90e0ef, #c77dff);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      border-left: 4px solid #f72585;
+      padding-left: 1rem;
+      margin-bottom: 1.3rem;
+    }
+    .summary-text {
+      background: rgba(25, 20, 45, 0.5);
+      backdrop-filter: blur(8px);
+      padding: 1.3rem 1.6rem;
+      border-radius: 1.8rem;
+      border: 1px solid rgba(247, 37, 133, 0.3);
+      font-size: 0.98rem;
+    }
+    .exp-item, .project-item {
+      background: rgba(18, 15, 35, 0.55);
+      backdrop-filter: blur(8px);
+      border-radius: 1.5rem;
+      padding: 1.2rem 1.4rem;
+      margin-bottom: 1.4rem;
+      transition: all 0.25s;
+      border: 1px solid rgba(76, 201, 240, 0.2);
+    }
+    .exp-item:hover, .project-item:hover {
+      transform: translateX(8px) translateY(-4px);
+      background: rgba(40, 25, 70, 0.7);
+      border-color: #f72585;
+      box-shadow: 0 12px 25px -12px #f7258566;
+    }
+    .exp-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin-bottom: 0.4rem;
+    }
+    .exp-title {
+      font-weight: 800;
+      font-size: 1.1rem;
+      background: linear-gradient(145deg, #fff, #ffb8d0);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+    .exp-date {
+      font-size: 0.7rem;
+      background: #f7258544;
+      padding: 0.2rem 0.8rem;
+      border-radius: 30px;
+      color: #ffc8dd;
+    }
+    .exp-desc li, .project-desc li {
+      margin-bottom: 0.5rem;
+      display: flex;
+      gap: 0.6rem;
+      font-size: 0.88rem;
+      color: #cfdfef;
+    }
+    .skills-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .skill-card {
+      background: rgba(30, 20, 55, 0.6);
+      backdrop-filter: blur(4px);
+      border-radius: 1.2rem;
+      padding: 0.7rem 1rem;
+      min-width: 140px;
+      transition: all 0.2s;
+      border: 1px solid #4cc9f066;
+    }
+    .skill-card:hover {
+      background: linear-gradient(135deg, #7209b7aa, #f72585aa);
+      transform: translateY(-5px);
+      border-color: #ffb3c6;
+    }
+    .skill-name {
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+    .skill-level {
+      font-size: 0.7rem;
+      background: #00000055;
+      display: inline-block;
+      padding: 0.2rem 0.6rem;
+      border-radius: 20px;
+    }
+    footer {
+      text-align: center;
+      font-size: 0.7rem;
+      opacity: 0.7;
+      margin-top: 1.2rem;
+      border-top: 1px solid #f7258533;
+      padding-top: 1rem;
+    }
+    @media (max-width: 850px) {
+      .grid-layout { grid-template-columns: 1fr; }
+      .left-panel { border-right: none; border-bottom: 1px solid #4cc9f033; }
+      body { padding: 1rem; }
+    }
+    .counter-stat {
+      display: flex;
+      gap: 1rem;
+      justify-content: space-around;
+      margin-top: 1rem;
+      background: rgba(247, 37, 133, 0.1);
+      border-radius: 2rem;
+      padding: 0.8rem;
+      backdrop-filter: blur(4px);
+    }
+    .stat-number {
+      font-size: 1.8rem;
+      font-weight: 800;
+      font-family: 'Clash Display', monospace;
+      background: linear-gradient(135deg, #f72585, #4cc9f0);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+    .glow-icon {
+      text-shadow: 0 0 6px #4cc9f0;
+    }
+  </style>
 </head>
-
 <body>
+<div class="portfolio-container">
+  <div class="grid-layout">
+    <aside class="left-panel">
+      <div class="profile-avatar">
+        <div class="avatar-circle">
+          <span>SG</span>
+        </div>
+      </div>
+      <div class="name-title">
+        <h1>Shushan Ghazaryan</h1>
+        <div style="text-align: center;">
+          <span class="badge-role"><i class="fab fa-shopify"></i> Shopify Alchemist · Trend Architect</span>
+        </div>
+      </div>
+      <div class="contact-info" style="margin-top: 1.5rem;">
+        <div class="contact-item"><i class="fas fa-phone-alt"></i> <a href="tel:+37496686600">+374 96 686600</a></div>
+        <div class="contact-item"><i class="fas fa-envelope"></i> <a href="mailto:shushan.ghazaryan21@gmail.com">shushan.ghazaryan21@gmail.com</a></div>
+        <div class="contact-item"><i class="fas fa-map-marker-alt"></i> <span>Yerevan / Remote · Global</span></div>
+      </div>
+      <div class="divider-light"></div>
+      <div class="section-left">
+        <h3><i class="fas fa-microchip"></i> Tech Stack</h3>
+        <div class="tech-stack">
+          <span class="tech-badge">Shopify Liquid</span><span class="tech-badge">Tailwind/SCSS</span>
+          <span class="tech-badge">JavaScript (ES2024)</span><span class="tech-badge">Shopify 2.0</span>
+          <span class="tech-badge">PageFly/GemPages</span><span class="tech-badge">Figma → Code</span>
+          <span class="tech-badge">Klaviyo | Recharge</span>
+        </div>
+      </div>
+      <div class="section-left">
+        <h3><i class="fas fa-globe"></i> Languages</h3>
+        <div class="lang-list">
+          <span class="lang-badge">🇦🇲 Armenian (Native)</span><span class="lang-badge">🇬🇧 English (Fluent)</span>
+          <span class="lang-badge">🇫🇷 French (Int.)</span><span class="lang-badge">🇷🇺 Russian (Int.)</span>
+        </div>
+      </div>
+      <div class="section-left">
+        <h3><i class="fas fa-sparkles"></i> Creative Obsessions</h3>
+        <div class="interest-list">
+          <span class="interest-item"><i class="fas fa-chart-line"></i> CRO + AI insights</span>
+          <span class="interest-item"><i class="fas fa-palette"></i> 3D micro-interactions</span>
+          <span class="interest-item"><i class="fas fa-bolt"></i> Sub-1s landing pages</span>
+        </div>
+      </div>
+      <a href="#" class="upwork-btn" id="upworkNeonBtn"><i class="fab fa-upwork"></i>  Let’s create magic →</a>
+      <div class="divider-light"></div>
+      <div class="counter-stat">
+        <div class="stat"><div class="stat-number" id="statProjects">32+</div><div>Stores launched</div></div>
+        <div class="stat"><div class="stat-number" id="statHappy">99%</div><div>Client joy</div></div>
+        <div class="stat"><div class="stat-number" id="statSpeed">0.9s</div><div>Avg. load time</div></div>
+      </div>
+    </aside>
 
-<!-- HERO -->
-<section class="hero">
+    <main class="right-panel">
+      <div class="right-section">
+        <h2>⚡ Digital couture for brands</h2>
+        <div class="summary-text">
+          I craft Shopify experiences that feel like the future — converting, kinetic, and impossible to ignore. With a blend of liquid mastery, trend-driven UI, and conversion psychology, I build landing pages that sell out and stores that become cult favorites. Available for Upwork collaborations worldwide.
+        </div>
+      </div>
 
-<div class="curved-text">
-<svg viewBox="0 0 500 200">
-<path id="curve" d="M50,150 Q250,0 450,150" fill="transparent"/>
-<text>
-<textPath href="#curve" startOffset="50%" text-anchor="middle">
-Երջանիկ օր ենք նշում միասին
-</textPath>
-</text>
-</svg>
+      <div class="right-section">
+        <h2>✨ Selected trajectory</h2>
+        <div class="exp-item">
+          <div class="exp-header"><span class="exp-title">Lead Shopify Architect (Freelance)</span><span class="exp-date">2021 – present</span></div>
+          <div class="exp-company" style="color:#b9e2ff;"><i class="fab fa-upwork"></i> Upwork Top Rated & DTC brands</div>
+          <ul class="exp-desc">
+            <li><i class="fas fa-bolt"></i> Delivered 40+ high-velocity landing pages & full stores, increasing conversion rates by 28-45%.</li>
+            <li><i class="fas fa-store"></i> Architected custom Shopify 2.0 sections with metafields & dynamic checkout enhancements.</li>
+            <li><i class="fas fa-tachometer-alt"></i> Optimized CLS/LCP → 96+ Google PageSpeed scores on mobile.</li>
+          </ul>
+        </div>
+        <div class="exp-item">
+          <div class="exp-header"><span class="exp-title">Frontend E‑commerce Engineer</span><span class="exp-date">2020 – 2021</span></div>
+          <div class="exp-company">WebCraft Agency · Yerevan</div>
+          <ul class="exp-desc">
+            <li><i class="fas fa-paintbrush"></i> Translated complex Figma designs into responsive Shopify themes, boosted user engagement by 35%.</li>
+            <li><i class="fas fa-chart-simple"></i> Integrated Shopify apps, custom AJAX cart, and subscription flows.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="right-section">
+        <h2>🚀 Neon projects</h2>
+        <div class="project-item">
+          <div class="exp-header"><span class="exp-title">CHROMA Beauty — immersive shoppable landing</span><span class="exp-date">2025</span></div>
+          <ul class="project-desc">
+            <li><i class="fas fa-chart-line"></i> Interactive 3D product viewer + dynamic countdown → 52% higher pre-order conversion.</li>
+            <li><i class="fas fa-mobile-alt"></i> Built with Liquid + GSAP, fully responsive, load time 0.9s.</li>
+          </ul>
+        </div>
+        <div class="project-item">
+          <div class="exp-header"><span class="exp-title">NEUROFIT — performance apparel store</span><span class="exp-date">2024</span></div>
+          <ul class="project-desc">
+            <li><i class="fas fa-rocket"></i> Custom mega-menu, AI-powered product recommendations, 38% increase in AOV.</li>
+            <li><i class="fab fa-shopify"></i> Integrated loyalty & referral system, 20% boost in repeat purchases.</li>
+          </ul>
+        </div>
+        <div class="project-item">
+          <div class="exp-header"><span class="exp-title">ECOVELO — sustainable mobility accessories</span><span class="exp-date">2024</span></div>
+          <ul class="project-desc">
+            <li><i class="fas fa-leaf"></i> Designed a carbon-offset checkout banner, improved trust metrics by 27%.</li>
+            <li><i class="fas fa-code"></i> Fully custom theme with dark mode toggle & ultra-fast lazy loading.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="right-section">
+        <h2>🧠 Core superpowers</h2>
+        <div class="skills-grid">
+          <div class="skill-card"><span class="skill-name">🛍️ Shopify Design + Dev</span><span class="skill-level">Expert</span></div>
+          <div class="skill-card"><span class="skill-name">📄 High‑conversion LP</span><span class="skill-level">Master</span></div>
+          <div class="skill-card"><span class="skill-name">🎨 Liquid + Figma</span><span class="skill-level">Expert</span></div>
+          <div class="skill-card"><span class="skill-name">⚡ Web Vitals Expert</span><span class="skill-level">Advanced</span></div>
+          <div class="skill-card"><span class="skill-name">📈 CRO & A/B testing</span><span class="skill-level">Expert</span></div>
+          <div class="skill-card"><span class="skill-name">🔌 App ecosystem</span><span class="skill-level">Expert</span></div>
+        </div>
+      </div>
+
+      <footer>
+        <i class="fas fa-infinity"></i> Vibrant, kinetic, and conversion-obsessed — your brand deserves the spotlight.  
+        © 2026 Shushan Ghazaryan — trend-driven e‑commerce.
+      </footer>
+    </main>
+  </div>
 </div>
-
-<div class="center">
-<div class="rings">💍</div>
-<div class="names">Անի & Արման</div>
-</div>
-
-</section>
-
-<!-- DATE -->
-<section class="section gold fade">
-<h2>24.05.2026</h2>
-</section>
-
-<!-- STORY -->
-<section class="section fade">
-<div class="story">
-Սիրելի՛ բարեկամներ և ընկերներ,
-մեծ սիրով հրավիրում ենք Ձեզ մասնակցելու մեր կյանքի ամենակարևոր օրվան։
-Ձեր ներկայությունը մեզ համար մեծ պատիվ կլինի։
-</div>
-</section>
-
-<!-- TIMELINE -->
-<section class="timeline">
-
-<div class="timeline-item left fade">
-<h3>12:00</h3>
-<p>Պսակադրություն</p>
-</div>
-
-<div class="timeline-item right fade">
-<h3>14:00</h3>
-<p>Ֆոտոշարք</p>
-</div>
-
-<div class="timeline-item left fade">
-<h3>17:00</h3>
-<p>Հարսանյաց հանդիսություն</p>
-</div>
-
-</section>
-
-<!-- RSVP -->
-<section class="section gold fade">
-
-<h2>Հաստատեք մասնակցությունը</h2>
-
-<input type="text" placeholder="Անուն Ազգանուն"><br>
-<input type="text" placeholder="Հյուրերի քանակ"><br>
-<textarea placeholder="Մեկնաբանություն"></textarea><br>
-
-<button>Ուղարկել</button>
-
-</section>
 
 <script>
-const faders = document.querySelectorAll('.fade');
+  const upworkBtn = document.getElementById('upworkNeonBtn');
+  if(upworkBtn) {
+    upworkBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      alert('✨ Let’s build something iconic! Connect on Upwork (replace link with your actual profile). Ready to elevate your store?');
+    });
+  }
 
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('show');
-    }
+  // micro-interactions: floating glow on hover for stat numbers
+  const statNumbers = document.querySelectorAll('.stat-number');
+  statNumbers.forEach(el => {
+    el.addEventListener('mouseenter', () => {
+      el.style.textShadow = '0 0 14px #f72585';
+    });
+    el.addEventListener('mouseleave', () => {
+      el.style.textShadow = 'none';
+    });
   });
-});
 
-faders.forEach(el => observer.observe(el));
+  // dynamic particle effect on badges
+  const badges = document.querySelectorAll('.tech-badge, .lang-badge, .interest-item');
+  badges.forEach(badge => {
+    badge.addEventListener('mouseenter', (e) => {
+      badge.style.transition = 'all 0.2s cubic-bezier(0.2, 1.2, 0.8, 1)';
+    });
+  });
+
+  // counter animation for projects & stats (dynamic counting)
+  const projectStat = document.getElementById('statProjects');
+  const happyStat = document.getElementById('statHappy');
+  if(projectStat) {
+    let count = 0;
+    const target = 32;
+    const updateCounter = () => {
+      if(count < target) {
+        count += Math.ceil(target/25);
+        if(count > target) count = target;
+        projectStat.innerText = count + '+';
+        setTimeout(updateCounter, 40);
+      }
+    };
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting) {
+          updateCounter();
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+    observer.observe(projectStat);
+  }
+  if(happyStat) {
+    let countHappy = 0;
+    const targetHappy = 99;
+    const updateHappy = () => {
+      if(countHappy < targetHappy) {
+        countHappy += 3;
+        if(countHappy > targetHappy) countHappy = targetHappy;
+        happyStat.innerText = countHappy + '%';
+        setTimeout(updateHappy, 35);
+      } else {
+        happyStat.innerText = '99%';
+      }
+    };
+    const observer2 = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting) {
+          updateHappy();
+          observer2.unobserve(entry.target);
+        }
+      });
+    });
+    observer2.observe(happyStat);
+  }
 </script>
-
 </body>
 </html>
